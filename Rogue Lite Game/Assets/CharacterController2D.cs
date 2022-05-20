@@ -54,8 +54,8 @@ public class CharacterController2D : MonoBehaviour
             }
         }
 
-        // Change facing direction
-        if (moveDirection != 0)
+        // Change facing direction - CURENTLY EXCLUDED because it'll be handled by look at mouse 
+      /*  if (moveDirection != 0)
         {
             if (moveDirection > 0 && !facingRight)
             {
@@ -67,7 +67,7 @@ public class CharacterController2D : MonoBehaviour
                 facingRight = false;
                 t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
             }
-        }
+        } */
 
         // Jumping
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
