@@ -16,8 +16,12 @@ public class CharacterController2D : MonoBehaviour
     public bool dashing;
     public float dashSpeed = 50f;
     public float startdashtime = 0.1f;
+    public int maxJumps = 2;
+    public float startDashCooldown = 0.2f;
+    public int maxDashes = 2;
 
     float maxSpeed;
+    float dashCooldown;
     float dashTime;
     bool isDashing;
     int doublejump;
@@ -42,11 +46,11 @@ public class CharacterController2D : MonoBehaviour
         facingRight = t.localScale.x > 0;
         isDashing = false;
         maxSpeed = startmaxSpeed;
-
+        dashCooldown = 0;
 
         if (doublejumping == true)
             doublejump = 0;
-        else doublejump = 1;
+        else doublejump = maxJumps;
 
         dashes = 0;
 
@@ -88,7 +92,7 @@ public class CharacterController2D : MonoBehaviour
         }
 
         // Jumping
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && (isGrounded || doublejump < 1))
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && (isGrounded || doublejump < maxJumps - 1))
         {
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
             doublejump++;   
@@ -99,20 +103,25 @@ public class CharacterController2D : MonoBehaviour
         {
             doublejump = 0;
         }
-        if (isGrounded && doublejumping == false)
-        {
-            doublejump = 1;
-        }
 
         //Dashing
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
+        if (Input.GetKeyDown(KeyCode.Z) && dashCooldown <= 0 && dashing == true && dashes < maxDashes - 1)
+        {   
+            
+            dashCooldown = startDashCooldown;
             dashTime = startdashtime;
             isDashing = true;
             maxSpeed = dashSpeed;
             dashes++;
         }
 
+        //Dashing CoolDown
+        if (dashCooldown > 0)
+        {
+            dashCooldown -= Time.deltaTime;
+        }
+
+        //DashTime
         if (isDashing == true)
         {
             dashTime -= Time.deltaTime;
