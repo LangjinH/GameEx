@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2021.3.2f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/navik/OneDrive/Documents/Rogue Lite Game/GameEx/My project (1)
+C:/Users/navik/OneDrive/Documents/Rogue Lite Game/GameEx/Rogue Lite Game
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56404
-Successfully changed project path to: C:/Users/navik/OneDrive/Documents/Rogue Lite Game/GameEx/My project (1)
-C:/Users/navik/OneDrive/Documents/Rogue Lite Game/GameEx/My project (1)
+63349
+Successfully changed project path to: C:/Users/navik/OneDrive/Documents/Rogue Lite Game/GameEx/Rogue Lite Game
+C:/Users/navik/OneDrive/Documents/Rogue Lite Game/GameEx/Rogue Lite Game
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,11 +47,11 @@ C:/Users/navik/OneDrive/Documents/Rogue Lite Game/GameEx/My project (1)
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 485.86 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 253.23 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.2f1 (d6360bedb9a0)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/navik/OneDrive/Documents/Rogue Lite Game/GameEx/My project (1)/Assets
+[Subsystems] Discovering subsystems at path C:/Users/navik/OneDrive/Documents/Rogue Lite Game/GameEx/Rogue Lite Game/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -63,92 +63,92 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56764
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56928
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.037431 seconds.
+Registered in 0.027912 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 316.26 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 421.35 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.272 seconds
+- Completed reload, in  2.193 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2274ms)
-		BeginReloadAssembly (242ms)
+	ReloadAssembly (2195ms)
+		BeginReloadAssembly (197ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (1609ms)
-			LoadAssemblies (236ms)
+		EndReloadAssembly (1668ms)
+			LoadAssemblies (191ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (348ms)
+			SetupTypeCache (291ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (105ms)
-			SetupLoadedEditorAssemblies (998ms)
+			RebuildScriptCaches (80ms)
+			SetupLoadedEditorAssemblies (1160ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (34ms)
+				InitializePlatformSupportModulesInManaged (31ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (316ms)
-				BeforeProcessingInitializeOnLoad (3ms)
-				ProcessInitializeOnLoadAttributes (480ms)
-				ProcessInitializeOnLoadMethodAttributes (165ms)
+				RefreshPlugins (422ms)
+				BeforeProcessingInitializeOnLoad (4ms)
+				ProcessInitializeOnLoadAttributes (541ms)
+				ProcessInitializeOnLoadMethodAttributes (162ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.027121 seconds.
+Registered in 0.031558 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\navik\OneDrive\Documents\Rogue Lite Game\GameEx\My project (1)\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\navik\OneDrive\Documents\Rogue Lite Game\GameEx\My project (1)\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\navik\OneDrive\Documents\Rogue Lite Game\GameEx\Rogue Lite Game\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\navik\OneDrive\Documents\Rogue Lite Game\GameEx\Rogue Lite Game\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 382.34 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 210.26 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.356 seconds
+- Completed reload, in  2.939 seconds
 Domain Reload Profiling:
-	ReloadAssembly (4358ms)
-		BeginReloadAssembly (421ms)
+	ReloadAssembly (2941ms)
+		BeginReloadAssembly (396ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (29ms)
+			DisableScriptedObjects (25ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (53ms)
-		EndReloadAssembly (3407ms)
-			LoadAssemblies (298ms)
+			CreateAndSetChildDomain (45ms)
+		EndReloadAssembly (2251ms)
+			LoadAssemblies (288ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (917ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (217ms)
-			SetupLoadedEditorAssemblies (1823ms)
+			SetupTypeCache (580ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (130ms)
+			SetupLoadedEditorAssemblies (1225ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (21ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (383ms)
-				BeforeProcessingInitializeOnLoad (437ms)
-				ProcessInitializeOnLoadAttributes (810ms)
-				ProcessInitializeOnLoadMethodAttributes (146ms)
-				AfterProcessingInitializeOnLoad (25ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (210ms)
+				BeforeProcessingInitializeOnLoad (259ms)
+				ProcessInitializeOnLoadAttributes (604ms)
+				ProcessInitializeOnLoadMethodAttributes (114ms)
+				AfterProcessingInitializeOnLoad (20ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (21ms)
+			AwakeInstancesAfterBackupRestoration (15ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.19 seconds
-Refreshing native plugins compatible for Editor in 1.11 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1.26 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4049 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 37 unused Assets / (55.6 KB). Loaded Objects now: 4505.
-Memory consumption went from 150.7 MB to 150.6 MB.
-Total: 7.935300 ms (FindLiveObjects: 0.700600 ms CreateObjectMapping: 0.442800 ms MarkObjects: 6.678500 ms  DeleteObjects: 0.111300 ms)
+Unloading 4062 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 37 unused Assets / (55.6 KB). Loaded Objects now: 4519.
+Memory consumption went from 152.8 MB to 152.8 MB.
+Total: 7.054100 ms (FindLiveObjects: 0.618600 ms CreateObjectMapping: 0.371900 ms MarkObjects: 5.908300 ms  DeleteObjects: 0.153700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -162,64 +162,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 307383.136253 seconds.
-  path: Assets/shovel-knight-pixel-art-maker-302729.png
-  artifactKey: Guid(370357726256c64438e6d7e2938f6967) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/shovel-knight-pixel-art-maker-302729.png using Guid(370357726256c64438e6d7e2938f6967) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae0313270c212b524b6a94c8549f38ae') in 0.494652 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.022686 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\navik\OneDrive\Documents\Rogue Lite Game\GameEx\My project (1)\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\navik\OneDrive\Documents\Rogue Lite Game\GameEx\My project (1)\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 2.54 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.939 seconds
-Domain Reload Profiling:
-	ReloadAssembly (4941ms)
-		BeginReloadAssembly (763ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (49ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (176ms)
-		EndReloadAssembly (3496ms)
-			LoadAssemblies (545ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1585ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (183ms)
-			SetupLoadedEditorAssemblies (1157ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (50ms)
-				SetLoadedEditorAssemblies (5ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (299ms)
-				ProcessInitializeOnLoadAttributes (641ms)
-				ProcessInitializeOnLoadMethodAttributes (130ms)
-				AfterProcessingInitializeOnLoad (27ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (29ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 7.82 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4038 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 24 unused Assets / (24.7 KB). Loaded Objects now: 4514.
-Memory consumption went from 154.4 MB to 154.4 MB.
-Total: 9.906600 ms (FindLiveObjects: 0.512600 ms CreateObjectMapping: 0.577500 ms MarkObjects: 8.770300 ms  DeleteObjects: 0.044100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  Time since last request: 435525.932713 seconds.
+  path: Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset
+  artifactKey: Guid(c41005c129ba4d66911b75229fd70b45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset using Guid(c41005c129ba4d66911b75229fd70b45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3950451084668360d05945240589cf11') in 0.108868 seconds 
