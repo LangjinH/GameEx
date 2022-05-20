@@ -166,3 +166,141 @@ Received Import Request.
   path: Assets/Scenes/Main Menu 1.unity
   artifactKey: Guid(e7284ea5bf057d14ca4fdd9ff8a7715d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scenes/Main Menu 1.unity using Guid(e7284ea5bf057d14ca4fdd9ff8a7715d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '714c7adbdbc2d41a13cb01607b09d85d') in 0.055004 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.034987 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\navik\OneDrive\Documents\Rogue Lite Game\GameEx\Rogue Lite Game\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\navik\OneDrive\Documents\Rogue Lite Game\GameEx\Rogue Lite Game\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.56 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.152 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3154ms)
+		BeginReloadAssembly (363ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (23ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (83ms)
+		EndReloadAssembly (2510ms)
+			LoadAssemblies (267ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (615ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (104ms)
+			SetupLoadedEditorAssemblies (1412ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (49ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (246ms)
+				ProcessInitializeOnLoadAttributes (929ms)
+				ProcessInitializeOnLoadMethodAttributes (136ms)
+				AfterProcessingInitializeOnLoad (48ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (20ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 6.79 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4040 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (70.2 KB). Loaded Objects now: 4535.
+Memory consumption went from 152.2 MB to 152.1 MB.
+Total: 7.195600 ms (FindLiveObjects: 0.556000 ms CreateObjectMapping: 0.586200 ms MarkObjects: 5.928100 ms  DeleteObjects: 0.123200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 115.671396 seconds.
+  path: Assets/Scenes/Gaming.unity
+  artifactKey: Guid(4f23312985ebd9c4ead164c2d3c4fc9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Gaming.unity using Guid(4f23312985ebd9c4ead164c2d3c4fc9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6acbf7704a8eace65bf38f98b9caf618') in 0.026170 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.306814 seconds.
+  path: Assets/Scenes/Main Menu 2.unity
+  artifactKey: Guid(bf70744093b1d2940b1960d4f1621a01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Main Menu 2.unity using Guid(bf70744093b1d2940b1960d4f1621a01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96ec8b6a3267c7432c06757645ab5e38') in 0.044246 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 30.973026 seconds.
+  path: Assets/Scenes/Main Menu.unity
+  artifactKey: Guid(fe672d4c6eda56a4da94243cd79ebd15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Main Menu.unity using Guid(fe672d4c6eda56a4da94243cd79ebd15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3eadf0646d1462f65473b651a20448bb') in 0.075283 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.027226 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\navik\OneDrive\Documents\Rogue Lite Game\GameEx\Rogue Lite Game\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\navik\OneDrive\Documents\Rogue Lite Game\GameEx\Rogue Lite Game\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 2.31 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  6.827 seconds
+Domain Reload Profiling:
+	ReloadAssembly (6831ms)
+		BeginReloadAssembly (774ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (55ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (180ms)
+		EndReloadAssembly (5296ms)
+			LoadAssemblies (586ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1733ms)
+			ReleaseScriptCaches (4ms)
+			RebuildScriptCaches (288ms)
+			SetupLoadedEditorAssemblies (2421ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (86ms)
+				SetLoadedEditorAssemblies (3ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (634ms)
+				ProcessInitializeOnLoadAttributes (1471ms)
+				ProcessInitializeOnLoadMethodAttributes (174ms)
+				AfterProcessingInitializeOnLoad (50ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (44ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 6.34 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4040 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (70.3 KB). Loaded Objects now: 4538.
+Memory consumption went from 152.2 MB to 152.1 MB.
+Total: 7.275300 ms (FindLiveObjects: 0.409500 ms CreateObjectMapping: 0.373600 ms MarkObjects: 6.363900 ms  DeleteObjects: 0.126600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 173.030168 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(608e11cfe49f8704797d40e0f7c75735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(608e11cfe49f8704797d40e0f7c75735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2f9c824bcdef89dd314ca127d15b6ad') in 0.025847 seconds 
