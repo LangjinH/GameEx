@@ -14,14 +14,18 @@ public class CharacterController2D : MonoBehaviour
     public Camera mainCamera;
     public bool doublejumping;
     public bool dashing;
-    public float dashSpeed = 50f;
+    public float dashSpeed = 100f;
     public float startdashtime = 0.1f;
+    public float startdashCooldown = 0.05f;
+    public int maxdashes = 2;
+    public int maxjumps = 2;
 
+    int dashes;
+    float dashCooldown;
     float maxSpeed;
     float dashTime;
     bool isDashing;
     int doublejump;
-    int dashes;
     bool facingRight = true;
     float moveDirection = 0;
     bool isGrounded = false;
@@ -46,9 +50,14 @@ public class CharacterController2D : MonoBehaviour
 
         if (doublejumping == true)
             doublejump = 0;
-        else doublejump = 1;
+        else doublejump = maxjumps;
 
-        dashes = 0;
+        if (dashing == true)
+            dashes = 0;
+        else dashes = maxdashes;
+
+        dashCooldown = 0;
+        
 
         if (mainCamera)
         {
@@ -88,7 +97,7 @@ public class CharacterController2D : MonoBehaviour
         }
 
         // Jumping
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && (isGrounded || doublejump < 1))
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && (isGrounded || doublejump < maxjumps - 1))
         {
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
             doublejump++;   
@@ -99,18 +108,20 @@ public class CharacterController2D : MonoBehaviour
         {
             doublejump = 0;
         }
-        if (isGrounded && doublejumping == false)
-        {
-            doublejump = 1;
-        }
 
         //Dashing
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashing == true && dashes < maxdashes && dashCooldown <= 0)
         {
+            dashCooldown = startdashCooldown;
             dashTime = startdashtime;
             isDashing = true;
             maxSpeed = dashSpeed;
             dashes++;
+        }
+
+        if (dashCooldown > 0)
+        {
+            dashCooldown -= Time.deltaTime;
         }
 
         if (isDashing == true)
