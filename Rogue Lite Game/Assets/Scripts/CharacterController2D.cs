@@ -8,11 +8,25 @@ using UnityEngine;
 public class CharacterController2D : MonoBehaviour
 {
     // Move player in 2D space
-    public float maxSpeed = 3.4f;
+    public float startmaxSpeed = 3.4f;
     public float jumpHeight = 6.5f;
     public float gravityScale = 1.5f;
     public Camera mainCamera;
+    public bool doublejumping;
+    public bool dashing;
+    public float dashSpeed = 100f;
+    public float startdashtime = 0.1f;
+    public float startdashCooldown = 0.05f;
+    public int maxdashes = 2;
+    public int maxjumps = 2;
 
+    Vector2 movement;
+    int dashes;
+    float dashCooldown;
+    float maxSpeed;
+    float dashTime;
+    bool isDashing;
+    int doublejump;
     bool facingRight = true;
     float moveDirection = 0;
     bool isGrounded = false;
@@ -31,6 +45,19 @@ public class CharacterController2D : MonoBehaviour
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
         facingRight = t.localScale.x > 0;
+        isDashing = false;
+        maxSpeed = startmaxSpeed;
+
+        if (doublejumping == true)
+            doublejump = 0;
+        else doublejump = maxjumps;
+
+        if (dashing == true)
+            dashes = 0;
+        else dashes = maxdashes;
+
+        dashCooldown = 0;
+        
 
         if (mainCamera)
         {
@@ -54,25 +81,63 @@ public class CharacterController2D : MonoBehaviour
             }
         }
 
-        // Change facing direction - CURENTLY EXCLUDED because it'll be handled by look at mouse 
-      /*  if (moveDirection != 0)
+        // Change facing direction
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y= Input.GetAxisRaw("Vertical");
+
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (mousePos.x > transform.position.x && !facingRight)
         {
-            if (moveDirection > 0 && !facingRight)
-            {
-                facingRight = true;
-                t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
-            }
-            if (moveDirection < 0 && facingRight)
-            {
-                facingRight = false;
-                t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
-            }
-        } */
+            flip();
+        }
+        else if (mousePos.x < transform.position.x && facingRight)
+        {
+            flip();
+        }
 
         // Jumping
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && (isGrounded || doublejump < maxjumps - 1))
         {
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+            doublejump++;   
+        }
+
+        //Reset DoubleJump
+        if (isGrounded && doublejumping == true)
+        {
+            doublejump = 0;
+        }
+
+        //Dashing
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashing == true && dashes < maxdashes && dashCooldown <= 0)
+        {
+            dashCooldown = startdashCooldown;
+            dashTime = startdashtime;
+            isDashing = true;
+            maxSpeed = dashSpeed;
+            dashes++;
+        }
+
+        if (dashCooldown > 0)
+        {
+            dashCooldown -= Time.deltaTime;
+        }
+
+        if (isDashing == true)
+        {
+            dashTime -= Time.deltaTime;
+
+            if(dashTime <= 0)
+            {
+                maxSpeed = startmaxSpeed;
+                isDashing = false;
+            }
+        }
+
+        //Reset Dashes
+        if (isGrounded)
+        {
+            dashes = 0;
         }
 
         // Camera follow
@@ -80,6 +145,13 @@ public class CharacterController2D : MonoBehaviour
         {
             mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
         }
+    }
+
+    //Flips the way a character is facing
+    void flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0f, 180f, 0f);
     }
 
     void FixedUpdate()
