@@ -6,7 +6,11 @@ using UnityEngine.UI;
 public class OptionsMenu : MonoBehaviour
 {
 
-    public Toggle fullscrrenTog, vsyncTog;
+    public Toggle fullscreenTog, vsyncTog;
+
+    public ResItem[] resolutions;
+
+    private int selectedResolution;
 
     // Start is called before the first frame update
     void Start()
@@ -20,19 +24,48 @@ public class OptionsMenu : MonoBehaviour
         
     }
 
+    public void ResLeft()
+    {
+        selectedResolution--;
+        if (selectedResolution < 0)
+        {
+            selectedResolution = 0;
+        }
+    }
+
+    public void ResRight()
+    {
+        selectedResolution++'
+            if (selectedResolution >resolutions.Length -1)
+        {
+            selectedResolution = resolutions.Length - 1;
+        }
+        
+    }
+
+
     public void ApplyGraphics()
     {
-        // Apply fullscreen 
-        Screen.fullscrern = fullscrrenTog.isOn;
+        // Apply fullscreen
+        Screen.fullScreen = fullscreenTog.isOn;
         
+
         if (vsyncTog.isOn)
         {
             QualitySettings.vSyncCount = 1;
-
-        }
+        }//if
         else
         {
             QualitySettings.vSyncCount = 0;
-        }
-    }
+        }//else
+        
+    }//apply graphics 
+}
+
+
+[System.Serializable]
+public class ResItem
+{
+    public int horizontal, vertical;
+
 }
