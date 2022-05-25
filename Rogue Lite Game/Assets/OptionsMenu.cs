@@ -28,23 +28,25 @@ public class OptionsMenu : MonoBehaviour
         {
             vsyncTog.isOn = true;
         }
-        bool foundRes = false;
-        for (int i =0; i<resolutions.Count; i++)
-        {
-            if (Screen.width == resolutions[i].horizontal && Screen.height == resolutions[i].vertical)
-            {
-                foundRes = true;
-                selectedResolution = i;
-                UpdateResLabel();
-            }
-        }
+      bool foundRes = false;
+         for (int i =0; i < 3; i++)
+         {
+             if (Screen.width == resolutions[i].horizontal && Screen.height == resolutions[i].vertical)
+             {
+                 foundRes = true;
+                 selectedResolution = i;
+                 UpdateResLabel();
+             }
+         }
 
-        // if resolution is not found
-        if (!foundRes)
-        {
-            resolutionLable.text = Screen.width.ToString() + " x " + Screen.height.ToString();
-            
-        }
+
+         // if resolution is not found
+         if (!foundRes)
+         {
+             resolutionLable.text = Screen.width.ToString() + " x " + Screen.height.ToString();
+
+         }
+          
     }
 
     // Update is called once per frame
