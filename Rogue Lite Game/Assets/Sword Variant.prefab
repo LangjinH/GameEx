@@ -12,6 +12,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2362289116444353322, guid: 47fa2e9b5353ea04ab9a2b1d00743813, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2362289116444353322, guid: 47fa2e9b5353ea04ab9a2b1d00743813, type: 3}
       propertyPath: ProjectilePrefab
       value: 
       objectReference: {fileID: 2200348839787146366, guid: 9f0cd40cfde29044ea00f9a59f8d7f6c, type: 3}
@@ -27,9 +31,13 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.030308247
       objectReference: {fileID: 0}
+    - target: {fileID: 2362289116444353325, guid: 47fa2e9b5353ea04ab9a2b1d00743813, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2362289116444353326, guid: 47fa2e9b5353ea04ab9a2b1d00743813, type: 3}
       propertyPath: m_Name
-      value: Sword
+      value: Sword Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2362289116444353327, guid: 47fa2e9b5353ea04ab9a2b1d00743813, type: 3}
       propertyPath: m_RootOrder
