@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ce948c6060efca449beaebfc15597b0b
+guid: 8af7d6bc52da6844a9c36ca915ae13c3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,13 +45,8 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-<<<<<<< HEAD
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-=======
-  alignment: 9
-  spritePivot: {x: 0.52255756, y: 0.68609834}
->>>>>>> origin/Gun
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -88,11 +83,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-<<<<<<< HEAD
     internalID: 0
-=======
-    internalID: 1537655665
->>>>>>> origin/Gun
     vertices: []
     indices: 
     edges: []
