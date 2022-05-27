@@ -58,9 +58,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-Rogue Lite Game/Logs/AssetImportWorker0-prev.log
-Rogue Lite Game/Logs/shadercompiler-UnityShaderCompiler.exe1.log
-Rogue Lite Game/Logs/shadercompiler-UnityShaderCompiler.exe2.log
-Rogue Lite Game/Logs/shadercompiler-UnityShaderCompiler.exe1.log
-Rogue Lite Game/Logs/shadercompiler-UnityShaderCompiler.exe2.log
 *.log
+*.dwlt
+*.log
+Rogue Lite Game/ProjectSettings/ShaderGraphSettings.asset
+Rogue Lite Game/UserSettings/EditorUserSettings.asset
