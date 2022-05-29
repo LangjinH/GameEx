@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Rogue Lite Game/Assets/Blade.cs.meta
+guid: 98bd6f89d0c0fa44abb4e4de0dfcc940
+========
 guid: 220e245a3e8ef2c4b8539a07ab1eb341
+>>>>>>>> main:Rogue Lite Game/Assets/Scripts/Weapon Scripts/SwordAnimation.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

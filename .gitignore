@@ -60,3 +60,6 @@ crashlytics-build.properties
 
 *.log
 *.dwlt
+*.log
+Rogue Lite Game/ProjectSettings/ShaderGraphSettings.asset
+Rogue Lite Game/UserSettings/EditorUserSettings.asset
