@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Audio;
 
 public class OptionsMenu : MonoBehaviour
 {
@@ -13,8 +14,14 @@ public class OptionsMenu : MonoBehaviour
 
     public int selectedResolution;
 
-    public TMP_Text resolutionLable;  
-    
+    public TMP_Text resolutionLable;
+
+    public AudioMixer theMixer;
+
+    public Slider mastSlider, musicSlider, sfxSlider;
+
+    public Text mastLabel, musicLabel, sfxLabel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -99,6 +106,24 @@ public class OptionsMenu : MonoBehaviour
         Screen.SetResolution(resolutions[selectedResolution].horizontal, resolutions[selectedResolution].vertical, fullscreenTog.isOn);
 
     }//apply graphics 
+
+    public void SetMasterVol()
+    {
+        masterLabel.text = (mastSlider.value + 80).ToString();
+    }
+
+    public void SetMusicVol()
+    {
+
+    }
+
+    public void SetSFXVol()
+    {
+
+
+    }
+
+
 }
 
 
