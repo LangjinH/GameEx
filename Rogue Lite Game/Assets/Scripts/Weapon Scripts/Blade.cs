@@ -4,62 +4,94 @@ using UnityEngine;
 
 //This script allows the Katana to use it's abilities
 public class Blade : MonoBehaviour {
-    private float CDtime; //The wait after the combo ends
-    public float StartCD;   //Starts cooldown
-    public float ComboTime;  //Determines how long the player is allowed to continue their combo 
-    public float StartCombo;    //Starts ComboTime;
+    float CDtime; //The wait after the combo ends
+    public float StartCD = 1.5f;   //Starts cooldown
+    float ComboTime;  //Determines how long the player is allowed to continue their combo 
+    public float StartCombo = 1.5f;    //Starts ComboTime;
     public Transform attackPos;
-    public Animator playerAnim; 
+    Animator playerAnim; 
     public LayerMask whatIsEnemies;
     public float attackRange;
     public int damage;              //Damage number
-    private float slash = 1;          //The number of slashes until the combo resets
+    private float slash;          //The number of slashes until the combo resets
     private int button;
+    private bool slashing;
+    private bool oncoolddown;
+
+    void Start()
+    {
+        playerAnim = GetComponent<Animator>();
+        slashing = false;
+        oncoolddown = false;
+        slash = 1;
+        CDtime = StartCD;
+        ComboTime = StartCombo;
+    }
+
     void Update() 
     {
-        //Check if the weapon is cooling down
-        if (CDtime <= 0)
-        {
             //Attack
-            if (Input.GetMouseButtonDown(button))
+            if (Input.GetMouseButtonDown(button) && oncoolddown == false)
             {
-                //Check combo stage
-                if (ComboTime > 0)
-                {
+                ComboTime = StartCombo;
+                slashing = true;
                     switch (slash)
                     {
                         case 1:
-                            playerAnim.SetTrigger("slash1"); //First hit, weakest
+                            playerAnim.SetTrigger("Sword_Slash1"); //First hit, weakest
+                    playerAnim.SetTrigger("reset");
+                    Debug.Log("slash1");
+                            ComboTime = StartCombo;
                             slash++;
                             break;
                         case 2:
-                            playerAnim.SetTrigger("slash2"); //second hit, stronger
-                            slash++;
-                            break;
+                            playerAnim.SetTrigger("Sword_Slash2"); //second hit, stronger
+                    playerAnim.SetTrigger("reset");
+                    slash++;
+                            Debug.Log("slash2");
+                            ComboTime = StartCombo;
+                        break;
                         case 3:
-                            playerAnim.SetTrigger("slash3");  //Final hit, strongest and reset
+                            playerAnim.SetTrigger("Sword_Slash3");  //Final hit, strongest and reset
+                            playerAnim.SetTrigger("reset");
+                            Debug.Log("slash3");
                             slash = 1;
                             break;
                     }
+
+            if (oncoolddown == true)
+            {
+                CDtime -= Time.deltaTime;
+                if (CDtime <= 0)
+                {
+                    oncoolddown = false;
+                    CDtime = StartCD;
+                }
+            }
+
+            if (slashing == true)
+            {
+                ComboTime -= Time.deltaTime;
+
+                if (ComboTime <= 0)
+                {
+                    if (slash == 3)
+                    {
+                        oncoolddown = true;
+                    }
+
+                    slashing = false;
+                    slash = 1;
                     ComboTime = StartCombo;
                 }
-                else
-                {
-                    slash = 1;
-                    ComboTime -= Time.deltaTime;
-                }
+            }
                 Collider2D[] Killspot = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
              /*  for (int i = 0; i < Killspot.Length; i++)
                 {
                     Killspot[i].GetComponent<Enemy>().TakeDamage(damage * (slash/1.2));
                 } */
-            }//If Slash
-            CDtime = StartCD;
-        }   
-        else
-        {
-            CDtime -= Time.deltaTime;
-        }
+            }//If Slash   
+
     }//Update
 
     void OnDrawGizmosSelected()

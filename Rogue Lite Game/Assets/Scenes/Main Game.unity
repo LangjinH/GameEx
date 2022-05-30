@@ -217,14 +217,15 @@ GameObject:
   m_Component:
   - component: {fileID: 76556878}
   - component: {fileID: 76556879}
-  - component: {fileID: 76556880}
+  - component: {fileID: 76556881}
+  - component: {fileID: 76556882}
   m_Layer: 0
   m_Name: Murasama
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &76556878
 Transform:
   m_ObjectHideFlags: 0
@@ -232,14 +233,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76556877}
-  m_LocalRotation: {x: -0, y: -0, z: -0.11295869, w: 0.9935998}
-  m_LocalPosition: {x: 6, y: 0.9, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.2585803, w: 0.9659898}
+  m_LocalPosition: {x: 9.4, y: 2.3, z: 0}
   m_LocalScale: {x: 9.5015, y: 10.5077095, z: 1.9003}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1150092376}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -12.972}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -29.972}
 --- !u!212 &76556879
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -292,7 +293,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &76556880
+--- !u!95 &76556881
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76556877}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fbeaad7c5fb49e14a97320243a12ef80, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &76556882
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -304,16 +325,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2c9e8f95f6a5044a1349a72aa5c940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartCD: 0
-  ComboTime: 0
-  StartCombo: 0
-  attackPos: {fileID: 0}
-  playerAnim: {fileID: 0}
+  StartCD: 1.5
+  StartCombo: 1.5
+  attackPos: {fileID: 1419435851}
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 0
-  attackRange: 0
-  damage: 0
+  attackRange: 1.5
+  damage: 10
 --- !u!1 &333215662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,6 +1197,7 @@ Transform:
   m_Children:
   - {fileID: 76556878}
   - {fileID: 1155477170}
+  - {fileID: 1419435851}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1598,6 +1618,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 391413266}
   parallaxEffect: 0.5
+--- !u!1 &1419435850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1419435851}
+  m_Layer: 0
+  m_Name: attackPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1419435851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419435850}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.6, y: -0.6, z: -0.07697332}
+  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1150092376}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1423091930
 GameObject:
   m_ObjectHideFlags: 0
