@@ -20,7 +20,7 @@ public class OptionsMenu : MonoBehaviour
 
     public Slider mastSlider, musicSlider, sfxSlider;
 
-    public Text mastLabel, musicLabel, sfxLabel;
+    public TMP_Text mastLabel, musicLabel, sfxLabel;
 
     // Start is called before the first frame update
     void Start()
@@ -109,18 +109,25 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetMasterVol()
     {
-        masterLabel.text = (mastSlider.value + 80).ToString();
+        mastLabel.text = (mastSlider.value + 80).ToString();
+
+        theMixer.SetFloat("MasterVol", mastSlider.value);
+
     }
 
     public void SetMusicVol()
     {
+        musicLabel.text = (musicSlider.value + 80).ToString();
+
+        theMixer.SetFloat("MusicVol", musicSlider.value);
 
     }
 
     public void SetSFXVol()
     {
+        sfxLabel.text = (sfxSlider.value + 80).ToString();
 
-
+        theMixer.SetFloat("SFXVol", sfxSlider.value);
     }
 
 
