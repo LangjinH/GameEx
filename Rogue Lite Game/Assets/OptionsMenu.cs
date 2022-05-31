@@ -22,6 +22,8 @@ public class OptionsMenu : MonoBehaviour
 
     public TMP_Text mastLabel, musicLabel, sfxLabel;
 
+    public AudioSource sfxLoop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +56,31 @@ public class OptionsMenu : MonoBehaviour
 
          }
           
+
+         if (PlayerPrefs.HasKey("MasterVol"))
+        {
+            theMixer.SetFloat("MasterVol", PlayerPrefs.GetFloat("MasterVol"));
+            mastSlider.value = PlayerPrefs.GetFloat("MasterVol");
+          
+        }
+
+        if (PlayerPrefs.HasKey("MusicVol"))
+        {
+            theMixer.SetFloat("MusicVol", PlayerPrefs.GetFloat("MusicVol"));
+            musicSlider.value = PlayerPrefs.GetFloat("MusicVol");
+
+        }
+
+        if (PlayerPrefs.HasKey("SFXVol"))
+        {
+            theMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
+            sfxSlider.value = PlayerPrefs.GetFloat("SFXVol");
+    
+        }
+
+        mastLabel.text = (mastSlider.value + 80).ToString();
+        sfxLabel.text = (sfxSlider.value + 80).ToString();
+        musicLabel.text = (musicSlider.value + 80).ToString();
     }
 
     // Update is called once per frame
@@ -113,6 +140,7 @@ public class OptionsMenu : MonoBehaviour
 
         theMixer.SetFloat("MasterVol", mastSlider.value);
 
+        PlayerPrefs.SetFloat("MasterVol", mastSlider.value);
     }
 
     public void SetMusicVol()
@@ -120,7 +148,7 @@ public class OptionsMenu : MonoBehaviour
         musicLabel.text = (musicSlider.value + 80).ToString();
 
         theMixer.SetFloat("MusicVol", musicSlider.value);
-
+        PlayerPrefs.SetFloat("MusicVol", musicSlider.value);
     }
 
     public void SetSFXVol()
@@ -128,8 +156,18 @@ public class OptionsMenu : MonoBehaviour
         sfxLabel.text = (sfxSlider.value + 80).ToString();
 
         theMixer.SetFloat("SFXVol", sfxSlider.value);
+        PlayerPrefs.SetFloat("SFXVol", sfxSlider.value);
     }
 
+    public void PlaySFXLoop()
+    {
+        sfxLoop.Play();
+    }
+
+    public void StopSFXLoop()
+    {
+        sfxLoop.Stop();
+    }
 
 }
 
