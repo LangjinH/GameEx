@@ -55,11 +55,22 @@ public class Blade : MonoBehaviour {
                             playerAnim.SetTrigger("Sword_Slash3");  //Final hit, strongest and reset
                             playerAnim.SetTrigger("reset");
                             Debug.Log("slash3");
-                            slash = 1;
+                            oncoolddown = true;
                             break;
-                    }
+                    }//Switch
+            //Killbox
+            if (oncoolddown == false)
+            {
+                Collider2D[] Killspot = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
 
-            if (oncoolddown == true)
+                for (int i = 0; i < Killspot.Length; i++)
+                {
+                    Killspot[i].GetComponent<Enemy>().TakeDamage(damage * (slash / 1.2));
+                }
+            }
+        }//If Slash   
+
+        if (oncoolddown == true)
             {
                 CDtime -= Time.deltaTime;
                 if (CDtime <= 0)
@@ -72,7 +83,7 @@ public class Blade : MonoBehaviour {
             if (slashing == true)
             {
                 ComboTime -= Time.deltaTime;
-
+               
                 if (ComboTime <= 0)
                 {
                     if (slash == 3)
@@ -84,14 +95,8 @@ public class Blade : MonoBehaviour {
                     slash = 1;
                     ComboTime = StartCombo;
                 }
+                
             }
-                Collider2D[] Killspot = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
-
-                for (int i = 0; i < Killspot.Length; i++)
-                {
-                    Killspot[i].GetComponent<Enemy>().TakeDamage(damage * (slash/1.2));
-                }
-            }//If Slash   
 
     }//Update
 

@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2c9e8f95f6a5044a1349a72aa5c940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartCD: 1.5
+  StartCD: 10
   StartCombo: 1.5
   attackPos: {fileID: 1419435851}
   whatIsEnemies:
