@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
-{
-    public string firstlevel;
-
+{ 
     public GameObject optionsScreen;
 
     // Start is called before the first frame update
@@ -23,7 +21,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(firstlevel);
+        SceneManager.LoadScene("Main Game", LoadSceneMode.Single);
     }
 
     public void OpenOptions()
