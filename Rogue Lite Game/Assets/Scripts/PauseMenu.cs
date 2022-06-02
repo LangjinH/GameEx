@@ -34,11 +34,14 @@ public class PauseMenu : MonoBehaviour
         {
             pauseScreen.SetActive(true);
             isPaused = true;
+            Time.timeScale = 0f;
         }
         else
         {
             pauseScreen.SetActive(false);
             isPaused = false;
+
+            Time.timeScale = 1f;
         }
     }
 
