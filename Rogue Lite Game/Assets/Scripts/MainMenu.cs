@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 { 
-    public GameObject optionsScreen;
+    public GameObject optionsScreen, creditsScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -37,5 +37,15 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void OpenCredits()
+    {
+        creditsScreen.SetActive(true);
+    }
+
+    public void CloseCredits()
+    {
+        creditsScreen.SetActive(false);
     }
 }
