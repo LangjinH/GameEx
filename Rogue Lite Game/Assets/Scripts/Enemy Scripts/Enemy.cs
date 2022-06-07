@@ -4,22 +4,24 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
+[RequireComponent(typeof(AudioSource))]
 
 public class Enemy : MonoBehaviour
 {
     private Animator anim;
     Rigidbody2D r2d;
     CapsuleCollider2D mainCollider;
-    public double health;
+    public double health = 100f;
     double dmg_num;
-
+    AudioSource source;
+    public AudioClip hit1, hit2, death;
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         r2d = GetComponent<Rigidbody2D>();
         mainCollider = GetComponent<CapsuleCollider2D>();
-        health = 100;
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class Enemy : MonoBehaviour
             r2d.bodyType = RigidbodyType2D.Static;
             anim.SetTrigger("EnemyDeath");
             health = 0.01;
+            source.PlayOneShot(death, 0.7f);
         }
     }
 
@@ -37,6 +40,11 @@ public class Enemy : MonoBehaviour
     {
         if (health > 0)
         {
+            switch(dmg_num)
+            {
+                case > 10: source.PlayOneShot(hit1, 0.7f); break;
+                case < 10: source.PlayOneShot(hit2, 0.7f); break;
+            }
             health -= dmg_num;
         }
     }

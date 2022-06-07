@@ -7,12 +7,72 @@ public class Shoot : MonoBehaviour
     public int button;
     public ProjectileBehaviour ProjectilePrefab;
     public Transform LaunchOffset;
-    // Update is called once per frame
+    public float firerate = 0.5f;
+    public float reload = 2f;
+    public float ammo = 9f;
+    public float reserves = 30f;
+    float reloadtime;   //Reload conter, time dependant on "reload"
+    float firetime;       //Firerate counter, time dependant "firerate"
+    float clipsize;
+    bool reloading;        //Currently reloading, no animation cancelling!
+    bool firing;              //Currently firing
+
+    AudioSource Source;
+    public AudioClip Fire, Reload, NoAmmo;
+
+    private void Start()
+    {
+        reloading = false;
+        firing = false;
+        clipsize = ammo;
+        Source = GetComponent<AudioSource>();
+    }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(button))
+        //Shooting
+        if (Input.GetMouseButton(button) && reloading == false && firing == false)
         {
-            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation); 
+            Source.PlayOneShot(Fire, 0.7f);
+            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+
+            //Ammo time
+            if (ammo > 0 && firing == false)
+            {         
+                ammo--;
+                firing = true;
+                firetime = firerate;
+            }
+        }// if Shooting
+
+        //Reloading initiation
+        if (ammo == 0 && reloading == false || Input.GetKeyDown(KeyCode.R))
+        {
+            //Begin sequence
+            reloading = true;
+            reloadtime = reload;
+            Source.PlayOneShot(Reload);
+        }//If reload initiation
+
+        //Reload
+        if (reloading == true)
+        {
+            reloadtime -= Time.deltaTime;
+            if (reloadtime <= 0)
+            {
+                reloading = false;
+                reserves -= (clipsize - ammo);
+                ammo = clipsize;
+            }
+        }//Reload 
+
+        //firing
+        if (firing == true)
+        {
+            firetime -= Time.deltaTime;
+            if (firetime <= 0)
+            {
+                firing = false;
+            }
         }
     }
 }

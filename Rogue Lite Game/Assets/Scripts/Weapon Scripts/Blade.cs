@@ -17,10 +17,12 @@ public class Blade : MonoBehaviour {
     private int button;
     private bool slashing;
     private bool oncoolddown;
-
+    AudioSource Source;
+    public AudioClip Slash1, Slash2, Slash3;
     void Start()
     {
         playerAnim = GetComponent<Animator>();
+        Source = GetComponent<AudioSource>();
         slashing = false;
         oncoolddown = false;
         slash = 1;
@@ -38,6 +40,7 @@ public class Blade : MonoBehaviour {
                     switch (slash)
                     {
                         case 1:
+                    Source.PlayOneShot(Slash1, 0.7f);
                             playerAnim.SetTrigger("Sword_Slash1"); //First hit, weakest
                     playerAnim.SetTrigger("reset");
                     Debug.Log("slash1");
@@ -45,29 +48,29 @@ public class Blade : MonoBehaviour {
                             slash++;
                             break;
                         case 2:
-                            playerAnim.SetTrigger("Sword_Slash2"); //second hit, stronger
+                    Source.PlayOneShot(Slash2, 0.7f);
+                    playerAnim.SetTrigger("Sword_Slash2"); //second hit, stronger
                     playerAnim.SetTrigger("reset");
                     slash++;
                             Debug.Log("slash2");
                             ComboTime = StartCombo;
                         break;
                         case 3:
-                            playerAnim.SetTrigger("Sword_Slash3");  //Final hit, strongest and reset
+                    Source.PlayOneShot(Slash3, 0.7f);
+                    playerAnim.SetTrigger("Sword_Slash3");  //Final hit, strongest and reset
                             playerAnim.SetTrigger("reset");
                             Debug.Log("slash3");
                             oncoolddown = true;
                             break;
                     }//Switch
-            //Killbox
-            if (oncoolddown == false)
-            {
-                Collider2D[] Killspot = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
 
+                //Killbox
+                Collider2D[] Killspot = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
                 for (int i = 0; i < Killspot.Length; i++)
                 {
                     Killspot[i].GetComponent<Enemy>().TakeDamage(damage * (slash / 1.2));
                 }
-            }
+            
         }//If Slash   
 
         if (oncoolddown == true)
