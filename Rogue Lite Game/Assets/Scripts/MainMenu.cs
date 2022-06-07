@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
-{ 
-    public GameObject optionsScreen, creditsScreen;
+{
+    public GameObject optionsScreen;
+        public GameObject creditsScreen;
 
     public void StartGame()
     {
