@@ -1381,16 +1381,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1150092372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 023e1facf6b1b844e81543dbf3b32f81, type: 3}
+  m_Script: {fileID: 11500000, guid: 007ce373f1bed874ba45291642e6b55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startmaxSpeed: 10
+  startmaxSpeed: 7
   jumpHeight: 20
   gravityScale: 5
   mainCamera: {fileID: 391413268}
   doublejumping: 1
   dashing: 1
-  dashSpeed: 50
+  dashSpeed: 100
   startdashtime: 0.1
   startdashCooldown: 0.05
   maxdashes: 2
@@ -1541,7 +1541,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1150092372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de581a9681f45fb449b1ffc85369c35b, type: 3}
+  m_Script: {fileID: 11500000, guid: d80ac535c8140704181801b2e4c9f582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1155477170 stripped

@@ -7,42 +7,21 @@ public class PauseMenu : MonoBehaviour
 {
 
     public GameObject optionsScreen, pauseScreen;
-  
-    public string mainMenuScene;
 
-    private bool isPaused;
-
-
-    // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseUnpause();
-        }
+    { 
     }
 
-    public void PauseUnpause()
+    public void UnPause()
     {
-        if (!isPaused)
-        {
-            pauseScreen.SetActive(true);
-            isPaused = true;
-            Time.timeScale = 0f;
-        }
-        else
-        {
-            pauseScreen.SetActive(false);
-            isPaused = false;
-
-            Time.timeScale = 1f;
-        }
+        PauseControl.isPaused = false;
+        SceneManager.UnloadSceneAsync("Pause Screen");
+        Time.timeScale = 1f;
     }
 
     public void OpenOptions()

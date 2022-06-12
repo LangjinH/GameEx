@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 184870999}
   - component: {fileID: 184870998}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Pause Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -783,7 +783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1142289559211505136, guid: 20f1781b402dccc49aea4acb92bb0031, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PauseUnpause
+      value: UnPause
       objectReference: {fileID: 0}
     - target: {fileID: 1142289559211505136, guid: 20f1781b402dccc49aea4acb92bb0031, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1574,7 +1574,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   optionsScreen: {fileID: 932467279}
   pauseScreen: {fileID: 1433606424}
-  mainMenuScene: Main Menu 2
 --- !u!1 &1874431725
 GameObject:
   m_ObjectHideFlags: 0

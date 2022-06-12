@@ -34,6 +34,8 @@ public class CharacterController2D : MonoBehaviour
     Rigidbody2D r2d;
     CapsuleCollider2D mainCollider;
     Transform t;
+    Animator anim;
+    bool isMoving;
 
     // Use this for initialization
     void Start()
@@ -41,12 +43,14 @@ public class CharacterController2D : MonoBehaviour
         t = transform;
         r2d = GetComponent<Rigidbody2D>();
         mainCollider = GetComponent<CapsuleCollider2D>();
+        anim = GetComponent<Animator>();
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
         facingRight = t.localScale.x > 0;
         isDashing = false;
         maxSpeed = startmaxSpeed;
+        isMoving = false;
 
         if (doublejumping == true)
             doublejump = 0;
@@ -68,90 +72,107 @@ public class CharacterController2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Movement controls
-        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
+        if (!PauseControl.isPaused)
         {
-            moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
-        }
-        else
-        {
-            if (isGrounded || r2d.velocity.magnitude < 0.01f)
+            // Movement controls
+            if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
             {
-                moveDirection = 0;
+                isMoving = true;
+                moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
+            }
+            else
+            {
+                if (isGrounded || r2d.velocity.magnitude < 0.01f)
+                {
+                    moveDirection = 0;
+                    isMoving = false;
+                }
+            }
+
+            if (isMoving == true)
+            {
+                anim.SetTrigger("Run");
+            }
+
+            if (isMoving == false)
+            {
+                anim.SetTrigger("Idle");
+            }
+
+            // Change facing direction
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (mousePos.x > transform.position.x && !facingRight)
+            {
+                flip();
+            }
+            else if (mousePos.x < transform.position.x && facingRight)
+            {
+                flip();
+            }
+
+            // Jumping
+            if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && (isGrounded || doublejump < maxjumps - 1))
+            {
+                anim.SetTrigger("Jump");
+                r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+                doublejump++;
+            }
+
+            //Reset DoubleJump
+            if (isGrounded && doublejumping == true)
+            {
+                doublejump = 0;
+            }
+
+            //Dashing
+            if (Input.GetKeyDown(KeyCode.LeftShift) && dashing == true && dashes < maxdashes && dashCooldown <= 0)
+            {
+                anim.SetTrigger("Dash");
+                dashCooldown = startdashCooldown;
+                dashTime = startdashtime;
+                isDashing = true;
+                maxSpeed = dashSpeed;
+                dashes++;
+            }
+
+            if (dashCooldown > 0)
+            {
+                dashCooldown -= Time.deltaTime;
+            }
+
+            if (isDashing == true)
+            {
+                dashTime -= Time.deltaTime;
+
+                if (dashTime <= 0)
+                {
+                    maxSpeed = startmaxSpeed;
+                    isDashing = false;
+                }
+            }
+
+            //Reset Dashes
+            if (isGrounded)
+            {
+                dashes = 0;
+            }
+
+            // Camera follow
+            if (mainCamera)
+            {
+                mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
+            }
+
+            //Flips the way a character is facing
+            void flip()
+            {
+                facingRight = !facingRight;
+                transform.Rotate(0f, 180f, 0f);
             }
         }
-
-        // Change facing direction
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y= Input.GetAxisRaw("Vertical");
-
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (mousePos.x > transform.position.x && !facingRight)
-        {
-            flip();
-        }
-        else if (mousePos.x < transform.position.x && facingRight)
-        {
-            flip();
-        }
-
-        // Jumping
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && (isGrounded || doublejump < maxjumps - 1))
-        {
-            r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
-            doublejump++;   
-        }
-
-        //Reset DoubleJump
-        if (isGrounded && doublejumping == true)
-        {
-            doublejump = 0;
-        }
-
-        //Dashing
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashing == true && dashes < maxdashes && dashCooldown <= 0)
-        {
-            dashCooldown = startdashCooldown;
-            dashTime = startdashtime;
-            isDashing = true;
-            maxSpeed = dashSpeed;
-            dashes++;
-        }
-
-        if (dashCooldown > 0)
-        {
-            dashCooldown -= Time.deltaTime;
-        }
-
-        if (isDashing == true)
-        {
-            dashTime -= Time.deltaTime;
-
-            if(dashTime <= 0)
-            {
-                maxSpeed = startmaxSpeed;
-                isDashing = false;
-            }
-        }
-
-        //Reset Dashes
-        if (isGrounded)
-        {
-            dashes = 0;
-        }
-
-        // Camera follow
-        if (mainCamera)
-        {
-            mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
-        }
-    }
-
-    //Flips the way a character is facing
-    void flip()
-    {
-        facingRight = !facingRight;
-        transform.Rotate(0f, 180f, 0f);
     }
 
     void FixedUpdate()
@@ -169,6 +190,7 @@ public class CharacterController2D : MonoBehaviour
             {
                 if (colliders[i] != mainCollider)
                 {
+                    anim.SetTrigger("Landing");
                     isGrounded = true;
                     break;
                 }
