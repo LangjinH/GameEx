@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Rogue Lite Game/Assets/Murasama_Slash (1).gif.meta
 guid: 79d0e1afd2c5f244f974baf47c642c03
+========
+guid: fa23a75271cd9984b8922b5671d7ecdc
+>>>>>>>> main-menu2:Rogue Lite Game/Assets/Frames/Death/Timeline 1_0001.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
