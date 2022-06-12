@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 5
+  spritePixelsToUnits: 7
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,253 +104,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet (1)_0
+      name: Player_Run_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 54
         width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a41cf57f850d4c498ab7b700cecd64f
-      internalID: 751928279
+      spriteID: ad8bd44e3f3308549911e824bd46db6d
+      internalID: 1603389247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet (1)_1
+      name: Player_Run_1
       rect:
         serializedVersion: 2
         x: 200
-        y: 0
+        y: 54
         width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ddbf2c183a81a3409644830059a3096
-      internalID: -574569098
+      spriteID: e116147488f83fb41b48071c02d166e4
+      internalID: 442539771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet (1)_2
+      name: Player_Run_2
       rect:
         serializedVersion: 2
         x: 400
-        y: 0
+        y: 54
         width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40e15dfb6e73ba64eb506242d87a5313
-      internalID: 377768841
+      spriteID: 50365e1361f904e4a82b946e39ed1a15
+      internalID: 779831934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet (1)_3
+      name: Player_Run_3
       rect:
         serializedVersion: 2
         x: 600
-        y: 0
+        y: 54
         width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0136944da80d4234cbddbe0703407346
-      internalID: -2068678042
+      spriteID: a0498d39aae97eb4a998f196cae42219
+      internalID: -1693141306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet (1)_4
+      name: Player_Run_4
       rect:
         serializedVersion: 2
         x: 800
-        y: 0
+        y: 54
         width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 331cc2d5294daf4408c3f610e0cc5179
-      internalID: -212590269
+      spriteID: ef6d6d4160d7fde4c9f0d4cf45f40bfb
+      internalID: -670265448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet (1)_5
+      name: Player_Run_5
       rect:
         serializedVersion: 2
         x: 1000
-        y: 0
+        y: 54
         width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4e7ce49dd443c1469b2accf59d822bf
-      internalID: 899192020
+      spriteID: bcf16f250da7c0b49918e9ae2d5d1af1
+      internalID: 1572822480
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet (1)_6
+      name: Player_Run_6
       rect:
         serializedVersion: 2
         x: 1200
-        y: 0
+        y: 54
         width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1127b9209c1a7f94ba69b0f3433055a2
-      internalID: -1958675497
+      spriteID: c43cbd10fd944214e97f3050d33a625e
+      internalID: -1019776680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet (1)_7
+      name: Player_Run_7
       rect:
         serializedVersion: 2
         x: 1400
-        y: 0
+        y: 54
         width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9d9f652e0eae464a90178c0e876fb7c
-      internalID: 39572206
+      spriteID: 39b7672a82b94834c96c9d99231589ba
+      internalID: 1961739185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet (1)_8
+      name: Player_Run_8
       rect:
         serializedVersion: 2
         x: 1600
-        y: 0
+        y: 54
         width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 067a2c10b5024ec4c8e25ef36f13dc2b
-      internalID: 445998497
+      spriteID: 6ed20b3ec67763446a9af9d87df94ca1
+      internalID: 204928155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet (1)_9
+      name: Player_Run_9
       rect:
         serializedVersion: 2
         x: 1800
-        y: 0
+        y: 54
         width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f172c707d2b634948ac8476de9426e4e
-      internalID: 1028832424
+      spriteID: baaa30e05a764d845936f0cf0695d86a
+      internalID: 2111364683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet (1)_10
+      name: Player_Run_10
       rect:
         serializedVersion: 2
         x: 2000
-        y: 0
+        y: 54
         width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2d94facd966b2043ae2f4ba1927c9c6
-      internalID: 293401360
+      spriteID: 7ab8d59c4a51d6f4e902c0455768bbff
+      internalID: 1686797980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet (1)_11
+      name: Player_Run_11
       rect:
         serializedVersion: 2
         x: 2200
-        y: 0
+        y: 54
         width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a91c02774b4aa2046ad19d65fc3dcd01
-      internalID: -1739727577
+      spriteID: f3f874ceae2ba6047a4b9e404127bd54
+      internalID: 1832686894
       vertices: []
       indices: 
       edges: []
@@ -366,18 +366,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pixilart Sprite Sheet (1)_4: -212590269
-      Pixilart Sprite Sheet (1)_5: 899192020
-      Pixilart Sprite Sheet (1)_6: -1958675497
-      Pixilart Sprite Sheet (1)_10: 293401360
-      Pixilart Sprite Sheet (1)_3: -2068678042
-      Pixilart Sprite Sheet (1)_1: -574569098
-      Pixilart Sprite Sheet (1)_2: 377768841
-      Pixilart Sprite Sheet (1)_8: 445998497
-      Pixilart Sprite Sheet (1)_7: 39572206
-      Pixilart Sprite Sheet (1)_0: 751928279
-      Pixilart Sprite Sheet (1)_11: -1739727577
-      Pixilart Sprite Sheet (1)_9: 1028832424
+      Player_Run_8: 204928155
+      Player_Run_7: 1961739185
+      Player_Run_11: 1832686894
+      Player_Run_6: -1019776680
+      Player_Run_4: -670265448
+      Player_Run_5: 1572822480
+      Player_Run_1: 442539771
+      Player_Run_9: 2111364683
+      Player_Run_2: 779831934
+      Player_Run_10: 1686797980
+      Player_Run_0: 1603389247
+      Player_Run_3: -1693141306
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
