@@ -149,6 +149,7 @@ public class CharacterController2D : MonoBehaviour
 
                 if (dashTime <= 0)
                 {
+                    anim.SetTrigger("DashReset");
                     maxSpeed = startmaxSpeed;
                     isDashing = false;
                 }
