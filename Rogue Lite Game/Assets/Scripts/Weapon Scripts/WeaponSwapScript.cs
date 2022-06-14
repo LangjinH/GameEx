@@ -26,6 +26,7 @@ public class WeaponSwapScript : MonoBehaviour
         Weps[0].SetActive(true);
         currentWep = Weps[0];
         currentWeaponIndex = 0;
+        Weps[currentWeaponIndex].gameObject.tag = "CurrentWeapon";
     }
 
     // Update is called once per frame
@@ -37,9 +38,11 @@ public class WeaponSwapScript : MonoBehaviour
             if(currentWeaponIndex < totalWeapons-1)
             {
                 Weps[currentWeaponIndex].SetActive(false);
+                Weps[currentWeaponIndex].gameObject.tag = "StowedWeapon";
                 currentWeaponIndex++;
                 Weps[currentWeaponIndex].SetActive(true);
-            }    
+                Weps[currentWeaponIndex].gameObject.tag = "CurrentWeapon";
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -48,8 +51,10 @@ public class WeaponSwapScript : MonoBehaviour
             if (currentWeaponIndex > 0)
             {
                 Weps[currentWeaponIndex].SetActive(false);
+                Weps[currentWeaponIndex].gameObject.tag = "StowedWeapon";
                 currentWeaponIndex--;
                 Weps[currentWeaponIndex].SetActive(true);
+                Weps[currentWeaponIndex].gameObject.tag = "CurrentWeapon";
             }
         }
     }

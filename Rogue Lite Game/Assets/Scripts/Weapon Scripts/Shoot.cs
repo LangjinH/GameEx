@@ -9,11 +9,11 @@ public class Shoot : MonoBehaviour
     public Transform LaunchOffset;
     public float firerate = 0.5f;
     public float reload = 2f;
-    public float ammo = 9f;
-    public float reserves = 30f;
+    public int ammo = 9;
+    public int reserves = 30;
     float reloadtime;   //Reload conter, time dependant on "reload"
     float firetime;       //Firerate counter, time dependant "firerate"
-    float clipsize;
+    int clipsize;
     bool reloading;        //Currently reloading, no animation cancelling!
     bool firing;              //Currently firing
 

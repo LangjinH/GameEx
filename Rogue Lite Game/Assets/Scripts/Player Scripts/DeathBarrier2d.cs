@@ -26,7 +26,7 @@ public class DeathBarrier2d : MonoBehaviour
     private void Die()
     {
         r2b.bodyType = RigidbodyType2D.Static;
-        anim.SetTrigger("death");
+        anim.SetTrigger("Death");
     }
 
     private void ResetLevel()

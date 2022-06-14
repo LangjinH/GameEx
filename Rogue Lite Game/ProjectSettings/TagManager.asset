@@ -6,6 +6,9 @@ TagManager:
   tags:
   - DeathZone
   - Enemy
+  - StowedWeapon
+  - CurrentWeapon
+  - Gun
   layers:
   - Default
   - TransparentFX
@@ -37,8 +40,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Ground
+  - BackGround
   m_SortingLayers:
   - name: Default
     uniqueID: 0

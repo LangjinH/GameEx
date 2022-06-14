@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -107,10 +107,10 @@ TextureImporter:
       name: Player_Dash_9
       rect:
         serializedVersion: 2
-        x: 7200
-        y: 49
+        x: 5400
+        y: 66
         width: 600
-        height: 355
+        height: 338
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: Player_Dash_10
       rect:
         serializedVersion: 2
-        x: 7800
-        y: 49
+        x: 6000
+        y: 66
         width: 600
-        height: 355
+        height: 338
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,10 +149,10 @@ TextureImporter:
       name: Player_Dash_11
       rect:
         serializedVersion: 2
-        x: 8400
-        y: 49
+        x: 6600
+        y: 66
         width: 600
-        height: 355
+        height: 338
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,10 +170,10 @@ TextureImporter:
       name: Player_Dash_12
       rect:
         serializedVersion: 2
-        x: 9000
-        y: 49
+        x: 7200
+        y: 66
         width: 600
-        height: 355
+        height: 338
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: Player_Dash_13
       rect:
         serializedVersion: 2
-        x: 0
-        y: 49
+        x: 7800
+        y: 66
         width: 600
-        height: 355
+        height: 338
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +212,10 @@ TextureImporter:
       name: Player_Dash_14
       rect:
         serializedVersion: 2
-        x: 600
-        y: 49
+        x: 8400
+        y: 66
         width: 600
-        height: 355
+        height: 338
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,10 +233,10 @@ TextureImporter:
       name: Player_Dash_15
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 49
+        x: 9000
+        y: 66
         width: 600
-        height: 355
+        height: 338
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,13 +251,76 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Dash_16
+      name: Player_Dash_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 66
+        width: 600
+        height: 338
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 520904524a1f015409a663979380f4f4
+      internalID: -1426054677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Dash_1
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 66
+        width: 600
+        height: 338
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e33df9e9256540d40b5046c9e9f84658
+      internalID: 1704868075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Dash_2
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 66
+        width: 600
+        height: 338
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae4b72ae120d8f40a3975b3685cb1bc
+      internalID: -869339130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Dash_3
       rect:
         serializedVersion: 2
         x: 1800
-        y: 49
+        y: 66
         width: 600
-        height: 355
+        height: 338
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,20 +328,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b602b66eb0f39f44935a1f47e2df21d
-      internalID: 2118461836
+      spriteID: 09e680ed348bc814b9d94f984158d061
+      internalID: 2014773357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Dash_18
+      name: Player_Dash_4
       rect:
         serializedVersion: 2
         x: 2400
-        y: 49
+        y: 66
         width: 600
-        height: 355
+        height: 338
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,20 +349,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8de72bde460a1a44ab03ea8ab4467d1e
-      internalID: 1442406933
+      spriteID: 1c5c6a872fdc727418117694aa6ae746
+      internalID: -1214466523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Dash_20
+      name: Player_Dash_5
       rect:
         serializedVersion: 2
         x: 3000
-        y: 49
+        y: 66
         width: 600
-        height: 355
+        height: 338
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,20 +370,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69cc2fb5e5eaca34796046e16d158d9d
-      internalID: 987758141
+      spriteID: c36953cf6b0228a4e878de4782e535f0
+      internalID: 86074058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Dash_21
+      name: Player_Dash_6
       rect:
         serializedVersion: 2
         x: 3600
-        y: 49
+        y: 66
         width: 600
-        height: 355
+        height: 338
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,20 +391,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc275f0a64715634d90e451de47f3cad
-      internalID: -248900275
+      spriteID: 9b9ab6c346a545e40b89c9a7703178d8
+      internalID: 2083919718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Dash_23
+      name: Player_Dash_7
       rect:
         serializedVersion: 2
         x: 4200
-        y: 49
+        y: 66
         width: 600
-        height: 355
+        height: 338
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,20 +412,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f79f55fdd4bc76d46982884001383bd3
-      internalID: -1570705056
+      spriteID: eff9f8a9e1115c84bb556725df43bd84
+      internalID: -935390692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Dash_25
+      name: Player_Dash_8
       rect:
         serializedVersion: 2
         x: 4800
-        y: 49
+        y: 66
         width: 600
-        height: 355
+        height: 338
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,71 +433,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 271a72bf1063966458dd9e90af78cc28
-      internalID: -1293921992
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Dash_27
-      rect:
-        serializedVersion: 2
-        x: 5400
-        y: 49
-        width: 600
-        height: 355
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c69f3f2bb261cef48b1bbc1e13fe8861
-      internalID: -1998521722
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Dash_30
-      rect:
-        serializedVersion: 2
-        x: 6000
-        y: 49
-        width: 600
-        height: 355
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 593c85646dfdd814cad586defdf048bb
-      internalID: -1418314092
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Dash_33
-      rect:
-        serializedVersion: 2
-        x: 6600
-        y: 49
-        width: 600
-        height: 355
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2243582a0f12d549a292b2f23ec3ea5
-      internalID: -1081272417
+      spriteID: 71072b6efcae1844dbaa29f4ae3a21b8
+      internalID: -1307830440
       vertices: []
       indices: 
       edges: []
@@ -451,51 +451,21 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Player_Dash_2: -869339130
-      Player_Dash_35: -211452607
-      Player_Dash_25: -1293921992
-      Player_Dash_33: -1081272417
-      Player_Dash_39: -1820013521
+      Player_Dash_3: 2014773357
+      Player_Dash_9: 120392913
       Player_Dash_6: 2083919718
-      Player_Dash_31: 169726652
-      Player_Dash_41: -2095003186
       Player_Dash_12: -1690837575
       Player_Dash_1: 1704868075
-      Player_Dash_17: 992096259
       Player_Dash_5: 86074058
-      Player_Dash_23: -1570705056
       Player_Dash_0: -1426054677
       Player_Dash_15: 1059212796
-      Player_Dash_36: 1425915188
-      Player_Dash_32: -1542846881
       Player_Dash_8: -1307830440
       Player_Dash_4: -1214466523
-      Player_Dash_37: -308505032
       Player_Dash_7: -935390692
       Player_Dash_10: -1066362811
-      Player_Dash_34: -1349359062
-      Player_Dash_45: 1816366139
-      Player_Dash_24: 42872294
-      Player_Dash_18: 1442406933
-      Player_Dash_29: 1542556515
       Player_Dash_11: 412919232
-      Player_Dash_13: -504693946
-      Player_Dash_3: 2014773357
-      Player_Dash_27: -1998521722
-      Player_Dash_9: 120392913
-      Player_Dash_20: 987758141
-      Player_Dash_16: 2118461836
-      Player_Dash_38: -557573307
-      Player_Dash_43: 325012172
-      Player_Dash_22: -794095749
-      Player_Dash_42: 779850984
-      Player_Dash_30: -1418314092
-      Player_Dash_44: 938261975
-      Player_Dash_40: 1834145337
-      Player_Dash_28: 1737312117
-      Player_Dash_19: -1727089920
-      Player_Dash_21: -248900275
-      Player_Dash_26: -413770594
       Player_Dash_14: 31170619
+      Player_Dash_13: -504693946
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

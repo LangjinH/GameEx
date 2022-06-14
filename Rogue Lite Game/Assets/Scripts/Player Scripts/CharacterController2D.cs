@@ -99,18 +99,39 @@ public class CharacterController2D : MonoBehaviour
                 anim.SetTrigger("Idle");
             }
 
-            // Change facing direction
-            movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical");
+            //flip character when mouse is clicked
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                // Change facing direction
+                movement.x = Input.GetAxisRaw("Horizontal");
+                movement.y = Input.GetAxisRaw("Vertical");
 
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (mousePos.x > transform.position.x && !facingRight)
-            {
-                flip();
+                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                if (mousePos.x > transform.position.x && !facingRight)
+                {
+                    facingRight = true;
+                    t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
+                }
+                if (mousePos.x < transform.position.x && facingRight)
+                {
+                    facingRight = false;
+                    t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+                }
             }
-            else if (mousePos.x < transform.position.x && facingRight)
+
+            //flip character based on wasd controls
+            if (moveDirection != 0)
             {
-                flip();
+                if (moveDirection > 0 && !facingRight)
+                {
+                    facingRight = true;
+                    t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
+                }
+                if (moveDirection < 0 && facingRight)
+                {
+                    facingRight = false;
+                    t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+                }
             }
 
             // Jumping
@@ -165,13 +186,6 @@ public class CharacterController2D : MonoBehaviour
             if (mainCamera)
             {
                 mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
-            }
-
-            //Flips the way a character is facing
-            void flip()
-            {
-                facingRight = !facingRight;
-                transform.Rotate(0f, 180f, 0f);
             }
         }
     }

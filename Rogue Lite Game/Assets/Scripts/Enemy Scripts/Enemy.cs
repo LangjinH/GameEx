@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public int hitBoxDamage = 50;
     private Animator anim;
     Rigidbody2D r2d;
     CapsuleCollider2D mainCollider;
@@ -52,5 +53,14 @@ public class Enemy : MonoBehaviour
     void Death()
     {
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Player_Health player_stats = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Health>();
+            player_stats.TakeDmg(hitBoxDamage);
+        }    
     }
 }
