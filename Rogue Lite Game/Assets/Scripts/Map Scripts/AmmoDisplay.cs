@@ -12,7 +12,6 @@ public class AmmoDisplay : MonoBehaviour
     void Start()
     {
         currentWeapon = gameObject.GetComponent<Shoot>();
-        ammoDisplay = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame

@@ -19,6 +19,7 @@ public class CharacterController2D : MonoBehaviour
     public float startdashCooldown = 0.05f;
     public int maxdashes = 2;
     public int maxjumps = 2;
+    public bool facingRight = true;
 
     Vector2 movement;
     int dashes;
@@ -27,7 +28,6 @@ public class CharacterController2D : MonoBehaviour
     float dashTime;
     bool isDashing;
     int doublejump;
-    bool facingRight = true;
     float moveDirection = 0;
     bool isGrounded = false;
     Vector3 cameraPos;
@@ -77,6 +77,7 @@ public class CharacterController2D : MonoBehaviour
             // Movement controls
             if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
             {
+                anim.SetTrigger("Run");
                 isMoving = true;
                 moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
             }
@@ -89,34 +90,10 @@ public class CharacterController2D : MonoBehaviour
                 }
             }
 
-            if (isMoving == true)
-            {
-                anim.SetTrigger("Run");
-            }
-
+            //Idle
             if (isMoving == false)
             {
                 anim.SetTrigger("Idle");
-            }
-
-            //flip character when mouse is clicked
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                // Change facing direction
-                movement.x = Input.GetAxisRaw("Horizontal");
-                movement.y = Input.GetAxisRaw("Vertical");
-
-                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                if (mousePos.x > transform.position.x && !facingRight)
-                {
-                    facingRight = true;
-                    t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
-                }
-                if (mousePos.x < transform.position.x && facingRight)
-                {
-                    facingRight = false;
-                    t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
-                }
             }
 
             //flip character based on wasd controls
@@ -134,10 +111,9 @@ public class CharacterController2D : MonoBehaviour
                 }
             }
 
-            // Jumping
+            //Jumping
             if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && (isGrounded || doublejump < maxjumps - 1))
             {
-                anim.SetTrigger("Jump");
                 r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
                 doublejump++;
             }
@@ -176,9 +152,15 @@ public class CharacterController2D : MonoBehaviour
                 }
             }
 
+            if (!isGrounded)
+            {
+                anim.SetBool("Jumping", true);
+            }
+
             //Reset Dashes
             if (isGrounded)
             {
+                anim.SetBool("Jumping", false);
                 dashes = 0;
             }
 
@@ -190,13 +172,15 @@ public class CharacterController2D : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+void FixedUpdate()
     {
         Bounds colliderBounds = mainCollider.bounds;
         float colliderRadius = mainCollider.size.x * 0.4f * Mathf.Abs(transform.localScale.x);
         Vector3 groundCheckPos = colliderBounds.min + new Vector3(colliderBounds.size.x * 0.5f, colliderRadius * 0.9f, 0);
+
         // Check if player is grounded
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckPos, colliderRadius);
+
         //Check if any of the overlapping colliders are not player collider, if so, set isGrounded to true
         isGrounded = false;
         if (colliders.Length > 0)
@@ -205,7 +189,6 @@ public class CharacterController2D : MonoBehaviour
             {
                 if (colliders[i] != mainCollider)
                 {
-                    anim.SetTrigger("Landing");
                     isGrounded = true;
                     break;
                 }

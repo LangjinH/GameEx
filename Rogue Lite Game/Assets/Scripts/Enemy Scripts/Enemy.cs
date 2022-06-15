@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(CapsuleCollider2D))]
 [RequireComponent(typeof(AudioSource))]
 
 public class Enemy : MonoBehaviour
@@ -11,7 +10,7 @@ public class Enemy : MonoBehaviour
     public int hitBoxDamage = 50;
     private Animator anim;
     Rigidbody2D r2d;
-    CapsuleCollider2D mainCollider;
+    CompositeCollider2D mainCollider;
     public double health = 100f;
     double dmg_num;
     AudioSource source;
@@ -22,7 +21,7 @@ public class Enemy : MonoBehaviour
         source = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         r2d = GetComponent<Rigidbody2D>();
-        mainCollider = GetComponent<CapsuleCollider2D>();
+        mainCollider = GetComponent<CompositeCollider2D>();
     }
 
     // Update is called once per frame
@@ -41,6 +40,7 @@ public class Enemy : MonoBehaviour
     {
         if (health > 0)
         {
+            anim.SetTrigger("EnemyHit");
             switch(dmg_num)
             {
                 case > 10: source.PlayOneShot(hit1, 0.7f); break;

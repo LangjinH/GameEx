@@ -21,15 +21,22 @@ public class ProjectileBehaviour : MonoBehaviour
     public float exploSize = 1f;        //Explosive radius, unimportant for most weapons
     public double exploDamage = 50f;  //kaboom. (explosion damage)
 
-    private void Start()
+    //Directional information
+    bool isright;
+
+    void Start()
     {
         Source = GetComponent<AudioSource>();
+        isright = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController2D>().facingRight;
     }
-    private void Update()
+    void Update()
     {
-        transform.position += transform.right * Time.deltaTime * Speed;
+        if (isright)
+            transform.position += transform.right * Time.deltaTime * Speed;
+        if (!isright)
+            transform.position -= transform.right * Time.deltaTime * Speed;
     }
-    private void OnCollisionEnter2D()  //Destroys the object upon impacing another rigid body
+    void OnCollisionEnter2D()  //Destroys the object upon impacing another rigid body
     {
         Collider2D[] hitbox = Physics2D.OverlapCircleAll(bullet.position, shot, whatIsEnemies);
         Source.PlayOneShot(Hit, 0.7f);
