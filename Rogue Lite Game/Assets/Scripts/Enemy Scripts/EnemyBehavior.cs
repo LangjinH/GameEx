@@ -10,10 +10,16 @@ public class EnemyBehavior : MonoBehaviour
     public float attackDistance; //Minimum Distance for Attack
     public float moveSpeed;
     public float timer; //Timer for cooldown between attacks
+    public Transform leftLimit;
+    public Transform rightLimit;
+    public double health = 100f;
+    public AudioClip damaged, death;
 
+    private AudioSource source;
+    private Rigidbody2D r2d;
     private RaycastHit2D hit;
-    public GameObject target;
     private Animator anim;
+    private Transform target;
     private float distance; //Store the distance b/w enemy and player
     private bool attackMode;
     private bool inRange; //Checks is player in range
@@ -21,17 +27,41 @@ public class EnemyBehavior : MonoBehaviour
     private float intTimer;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        SelectTarget();
         intTimer = timer;
         anim = GetComponent<Animator>();
+        r2d = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        hit = Physics2D.Raycast(rayCast.position, Vector2.left, rayCastLength, rayCastMask);
-        RaycastDebugger();
+        if (health <= 0)
+        {
+            r2d.bodyType = RigidbodyType2D.Static;
+            anim.SetTrigger("EnemyDeath");
+            health = 0.01;
+            source.PlayOneShot(death, 0.7f);
+        }
+
+        if (!attackMode)
+        {
+            Move();
+        }
+
+        if(!InsideofLimits() && !inRange && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            SelectTarget();
+        }
+
+        if (inRange)
+        {
+            hit = Physics2D.Raycast(rayCast.position, Vector2.left, rayCastLength, rayCastMask);
+            RaycastDebugger();
+        }
 
         //When player is detected
         if (hit.collider != null)
@@ -45,17 +75,15 @@ public class EnemyBehavior : MonoBehaviour
 
         if (inRange == false)
         {
-            anim.SetBool("EnemyWalk", false);
             StopAttack();
         }
     }
 
     void EnemyLogic()
     {
-        distance = Vector2.Distance(transform.position, target.transform.position);
+        distance = Vector2.Distance(transform.position, target.position);
         if (distance > attackDistance)
         {
-            Move();
             StopAttack();
         }
         else if (attackDistance>=distance && cooling == false)
@@ -75,7 +103,7 @@ public class EnemyBehavior : MonoBehaviour
         anim.SetBool("EnemyWalk", true);
         if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
-            Vector2 targetPosition = new Vector2(target.transform.position.x, transform.position.y);
+            Vector2 targetPosition = new Vector2(target.position.x, transform.position.y);
 
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
         }
@@ -108,10 +136,14 @@ public class EnemyBehavior : MonoBehaviour
         anim.SetBool("EnemyAttack", false);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D trig)
     {
-        if(collision.tag == "Player")
+        if (trig.gameObject.tag == "Player")
+        {
+            target = trig.transform;
             inRange = true;
+            Flip();
+        }
     }
 
     void RaycastDebugger()
@@ -127,8 +159,63 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
+    //Attack cooling
     public void TriggerCooling()
     {
         cooling = true;
+    }
+
+    //Checks to see if enemy is inside limits of patrol
+    private bool InsideofLimits()
+    {
+        return (transform.position.x > leftLimit.position.x) && (transform.position.x < rightLimit.position.x);
+    }
+
+    //Chooses a target to walk towards
+    private void SelectTarget()
+    {
+        float distanceToLeft = Vector2.Distance(transform.position, leftLimit.position);
+        float distanceToRight = Vector2.Distance(transform.position, rightLimit.position);
+
+        if(distanceToLeft > distanceToRight)
+        {
+            target = leftLimit;
+        }
+        else
+        {
+            target = rightLimit;
+        }
+        Flip();
+    }
+
+    //Flips Enemy
+    private void Flip()
+    {
+        Vector3 rotation = transform.eulerAngles;
+        if (transform.position.x < target.position.x)
+        {
+            rotation.y = 180f;
+        }
+        else
+        {
+            rotation.y = 0f;
+        }
+
+        transform.eulerAngles = rotation;
+    }
+
+    public void TakeDamage(double dmg_num)
+    {
+        if (health > 0)
+        {
+            anim.SetTrigger("EnemyHit");  
+            source.PlayOneShot(damaged, 0.7f);
+            health -= dmg_num;
+        }
+    }
+
+    void Death()
+    {
+        Destroy(gameObject);
     }
 }
