@@ -12,11 +12,7 @@ public class EnemyBehavior : MonoBehaviour
     public float timer; //Timer for cooldown between attacks
     public Transform leftLimit;
     public Transform rightLimit;
-    public double health = 100f;
-    public AudioClip damaged, death;
 
-    private AudioSource source;
-    private Rigidbody2D r2d;
     private RaycastHit2D hit;
     private Animator anim;
     private Transform target;
@@ -32,21 +28,11 @@ public class EnemyBehavior : MonoBehaviour
         SelectTarget();
         intTimer = timer;
         anim = GetComponent<Animator>();
-        r2d = GetComponent<Rigidbody2D>();
-        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
-        {
-            r2d.bodyType = RigidbodyType2D.Static;
-            anim.SetTrigger("EnemyDeath");
-            health = 0.01;
-            source.PlayOneShot(death, 0.7f);
-        }
-
         if (!attackMode)
         {
             Move();
@@ -202,16 +188,6 @@ public class EnemyBehavior : MonoBehaviour
         }
 
         transform.eulerAngles = rotation;
-    }
-
-    public void TakeDamage(double dmg_num)
-    {
-        if (health > 0)
-        {
-            anim.SetTrigger("EnemyHit");  
-            source.PlayOneShot(damaged, 0.7f);
-            health -= dmg_num;
-        }
     }
 
     void Death()
