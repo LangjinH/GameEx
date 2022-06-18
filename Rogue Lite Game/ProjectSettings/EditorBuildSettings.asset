@@ -10,11 +10,11 @@ EditorBuildSettings:
     guid: bf70744093b1d2940b1960d4f1621a01
   - enabled: 1
     path: Assets/Scenes/Main Game.unity
-    guid: 3a4fbcc96c43f2b45a1fc49e96e91521
+    guid: 4f23312985ebd9c4ead164c2d3c4fc9a
   - enabled: 1
     path: Assets/Scenes/Pause Screen.unity
     guid: 985adcd647e58a54aa54cefe114f8df9
-  - enabled: 0
-    path: Assets/Scenes/Game.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/WinnerMenu.unity
+    guid: b13bcf51e1a822b4482aa8ae359411f8
   m_configObjects: {}

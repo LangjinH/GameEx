@@ -29,7 +29,7 @@ public class CharacterController2D : MonoBehaviour
     bool isDashing;
     int doublejump;
     float moveDirection = 0;
-    bool isGrounded = false;
+    public bool isGrounded = false;
     Vector3 cameraPos;
     Rigidbody2D r2d;
     CapsuleCollider2D mainCollider;

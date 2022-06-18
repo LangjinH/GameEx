@@ -68,7 +68,7 @@ public class Blade : MonoBehaviour {
                 Collider2D[] Killspot = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
                 for (int i = 0; i < Killspot.Length; i++)
                 {
-                    Killspot[i].GetComponent<Enemy>().TakeDamage(damage * (slash / 1.2));
+                    Killspot[i].GetComponent<EnemyHealth>().TakeDamage(damage * (slash / 1.2));
                 }
             
         }//If Slash   

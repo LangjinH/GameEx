@@ -7,16 +7,6 @@ public class PauseMenu : MonoBehaviour
 {
 
     public GameObject optionsScreen, pauseScreen;
-
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    { 
-    }
-
     public void UnPause()
     {
         PauseControl.isPaused = false;
@@ -36,6 +26,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitToMain()
     {
+        PauseControl.isPaused = false;
         SceneManager.LoadScene("Main Menu 2", LoadSceneMode.Single);
     }
 }

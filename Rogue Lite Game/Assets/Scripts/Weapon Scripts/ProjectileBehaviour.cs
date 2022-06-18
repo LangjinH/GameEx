@@ -42,7 +42,7 @@ public class ProjectileBehaviour : MonoBehaviour
         Source.PlayOneShot(Hit, 0.7f);
         for (int i = 0; i < hitbox.Length; i++)
         {
-            hitbox[i].GetComponent<Enemy>().TakeDamage(damage);
+            hitbox[i].GetComponent<EnemyHealth>().TakeDamage(damage);
         }
         //if explosive was set to true
         if (explosive == true)
@@ -51,7 +51,7 @@ public class ProjectileBehaviour : MonoBehaviour
             Source.PlayOneShot(Explosion, 0.7f);
             for (int i = 0; i < Killspot.Length; i++)
             {
-                Killspot[i].GetComponent<Enemy>().TakeDamage(exploDamage);
+                Killspot[i].GetComponent<EnemyHealth>().TakeDamage(exploDamage);
             }
 
         }

@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(double dmg_num)
+    public void TakeDamages(double dmg_num)
     {
         if (health > 0)
         {
