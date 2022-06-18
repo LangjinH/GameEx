@@ -45,7 +45,7 @@ public class EnemyBehavior : MonoBehaviour
 
         if (inRange)
         {
-            hit = Physics2D.Raycast(rayCast.position, Vector2.left, rayCastLength, rayCastMask);
+            hit = Physics2D.Raycast(rayCast.position, -transform.right, rayCastLength, rayCastMask);
             RaycastDebugger();
         }
 
@@ -136,12 +136,12 @@ public class EnemyBehavior : MonoBehaviour
     {
         if(distance > attackDistance)
         {
-            Debug.DrawRay(rayCast.position, Vector2.left * rayCastLength, Color.red);
+            Debug.DrawRay(rayCast.position, -transform.right * rayCastLength, Color.red);
 
         }
         else if(attackDistance>distance)
         {
-            Debug.DrawRay(rayCast.position, Vector2.left * rayCastLength, Color.green);
+            Debug.DrawRay(rayCast.position, -transform.right * rayCastLength, Color.green);
         }
     }
 
